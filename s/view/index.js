@@ -40,7 +40,7 @@ define(function (require, module, exports) {
             this.qrcode.makeCode(url);
         },
 
-        save: function download(url, name){
+        save: function (url, name){
 
             if (!url) {
                 return;
