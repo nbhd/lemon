@@ -2,30 +2,42 @@ requirejs.config({
     "baseUrl": "./s",
     "paths": {
         "underscore": "../vendor/underscore",
-        "zepto": "../vendor/zepto",
-        "backbone": "../vendor/backbone"
+        "jquery": "../vendor/jquery-1.11.1.min",
+        "backbone": "../vendor/backbone",
+        "qrcode": "../vendor/qrcode"
     },
     "shim": {
         "backbone": {
             "deps": [
                 "underscore",
-                "zepto"
+                "jquery"
             ],
             "exports": "Backbone"
         },
-        "zepto": {
+        "jquery": {
             "exports": "$"
         },
         "underscore": {
             "exports": "_"
+        },
+        "qrcode": {
+            "deps": [
+                "jquery"
+            ],
+            "exports": "Qrcode"
         }
     }
 });
 
+var lemon = {};
+lemon.core = {};
+
 /**
  * Entry-point the process
  */
-require(['index/index'], function (index) {
+require(['index/index', 'backbone', 'jquery', 'underscore', 'qrcode'], function (index) {
+
+    lemon.core.QRCode   = QRCode;
 
     index.init();
 });
