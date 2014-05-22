@@ -1,4 +1,4 @@
-define(function (require, module, exports) {
+define(function (require, exports, module) {
 
     var View = function () {};
     var $ = require('jquery');
