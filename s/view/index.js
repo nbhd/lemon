@@ -17,6 +17,8 @@ define(function (require, module, exports) {
             });
 
             this.input = $('#url');
+
+            this._setEvents();
         },
 
         /**
