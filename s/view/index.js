@@ -27,6 +27,12 @@ define(function (require, exports, module) {
         generate: function () {
             var url = this.input[0].value;
 
+            if (!url) {
+                $('#qrcode').children()[1].src = '';
+                $('#qrcode').children()[1].alt = '';
+                return;
+            }
+
             this.qrcode.makeCode(url);
         },
 
@@ -35,7 +41,10 @@ define(function (require, exports, module) {
          */
         save: function (url, name){
             console.log('save: ', url, name);
-            if (!url) {
+
+            var log = $('#log')[0].innerText || '';
+            if (!url || !name) {
+                $('#log')[0].innerText = 'failed\n' + log;
                 return;
             }
 
@@ -43,6 +52,8 @@ define(function (require, exports, module) {
             a.href = url;
             a.setAttribute('download', name || 'noname');
             a.dispatchEvent(new CustomEvent('click'));
+
+            $('#log')[0].innerText = 'success\n' + log;
         },
 
         /**

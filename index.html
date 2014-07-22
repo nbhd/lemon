@@ -4,15 +4,17 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=0">
       <meta name="format-detection" content="telephone=no">
+      <link rel="stylesheet" type="text/css" href="./layout.css">
       <title>lemon</title>
     </head>
     <body>
-        <div>QRCode Generator</div>
+        <h1>QRCode Generator</h1>
         <div class="lemon-input">
-            <input id="url" type="text" value="" style="width:80%" />
+            <input id="url" type="text" value="" />
         </div>
         <div id="qrcode"></div>
         <div class="lemon-btn-save">save</div>
+        <div class="scroll"><p id="log"></p></div>
         <script type="text/javascript" data-main="./index" src="./vendor/require.js"></script>
     </body>
 </html>
