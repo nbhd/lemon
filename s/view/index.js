@@ -50,7 +50,7 @@ define(function (require, exports, module) {
 
             var a = document.createElement('a');
             a.href = url;
-            a.setAttribute('download', name || 'noname');
+            a.setAttribute('download', name + '.png' || 'noname.png');
             a.dispatchEvent(new CustomEvent('click'));
 
             $('#log')[0].innerText = 'success\n' + log;
