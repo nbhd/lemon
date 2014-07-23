@@ -75,8 +75,19 @@ define(function (require, exports, module) {
                     self.generate();
                 });
 
+            // click
             $('.lemon-btn-save').eq(0).on('click', function () {
                 self.save($('#qrcode img')[0].src, self.input[0].value);
+            });
+
+            // over
+            $('.lemon-btn-save').eq(0).on('mouseenter', function (e) {
+                $(e.target).addClass('hover');
+            });
+
+            // out
+            $('.lemon-btn-save').eq(0).on('mouseleave', function (e) {
+                $(e.target).removeClass('hover');
             });
         }
     };
